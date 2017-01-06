@@ -3,7 +3,7 @@ const nomad = new Nomad()
 
 
 let instance = null
-const frequency = 45 * 60 * 1000
+const frequency = 30 * 60 * 1000
 
 // parse into url object 
 // const stocks = '("AAPL", "YHOO", "GOOGL")'
@@ -12,18 +12,18 @@ let pictures = {1: "/9j/4AAQSkZJRgABAQAASABIAAD/4QC0RXhpZgAATU0AKgAAAAgABQESAAMA
 
 
 const messageTemplate = {
-  heartRate: ,
-  lightSensor: ,
+  heartRate: "",
+  lightSensor: "",
   gps: {
-    lat: ,
-    long: ,
+    lat: "",
+    long: "",
   },
   accelerometer:{
-    xAccel: ,
-    yAccel: ,
-    zAccel: ,
+    xAccel: "",
+    yAccel: "",
+    zAccel: "",
   },
-  camera: ,
+  camera: "",
 }
 
 let message = {
@@ -54,18 +54,14 @@ function makeMessage() {
   results.accelerometer.xAccel = randomIntBtwNumbers(1892,2022)
   results.accelerometer.yAccel = randomIntBtwNumbers(372, 444)
   results.accelerometer.zAccel = randomIntBtwNumbers(15396, 17102)
-  results.camera = randomIntBtwNumbers(1, 2)
+  results.camera = pictures[randomIntBtwNumbers(1, 2)]
   return results
 }
 
 
 function startPoll(frequency) {
   setInterval(() => {
-    makeMessage()
-      .then((m) => {
-        return instance.publish(JSON.stringify(m))
-      })
-      .catch(console.log)
+    return instance.publish(JSON.stringify(makeMessage()))
   }, frequency)
 }
 
