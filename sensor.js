@@ -1,10 +1,9 @@
 const Nomad = require('nomad-stream')
-const moment = require('moment')
 const nomad = new Nomad()
-const fetch = require('node-fetch')
+
 
 let instance = null
-const frequency = 30 * 60 * 1000
+const frequency = 45 * 60 * 1000
 
 // parse into url object 
 // const stocks = '("AAPL", "YHOO", "GOOGL")'
