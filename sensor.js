@@ -15,45 +15,45 @@ function getTime() {
 
 electricScenarios = {
 	1: [
-		{name: "Bathroom Light", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Bathroom Fan", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Hair Dryer", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "Bathroom Light", type: "ON", averageOnTime: 30},
+		{name: "Bathroom Fan", type: "ON",  averageOnTime: 10},
+		{name: "Hair Dryer", type: "ON",  averageOnTime: 3},
 	],
 	2: [
-		{name: "Fridge Light", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Stove", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Microwave", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Toaster Oven", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Coffee Maker", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Kitchen Lights", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "Fridge Light", type: "ON", averageOnTime: .2},
+		{name: "Stove", type: "ON", averageOnTime: 50},
+		{name: "Microwave", type: "ON", averageOnTime: 5},
+		{name: "Toaster Oven", type: "ON", averageOnTime: 20},
+		{name: "Coffee Maker", type: "ON", averageOnTime: 10},
+		{name: "Kitchen Lights", type: "ON", averageOnTime: 90},
 	],
 	3: [
-		{name: "TV", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Stero System", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Fire Place", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Living Room Lights", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "TV", type: "ON", averageOnTime: 120},
+		{name: "Stero System", type: "ON", averageOnTime: 40},
+		{name: "Fire Place", type: "ON", averageOnTime: 120},
+		{name: "Living Room Lights", type: "ON", averageOnTime: 150},
 	],
 	4: [
-		{name: "TV", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Night Stand Light", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Living Room Lights", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Air Purifier", type: "ON", watt: "", time: "", consumption: "", averageOnTime: ""},		
+		{name: "TV", type: "ON", averageOnTime: 30},
+		{name: "Night Stand Light", averageOnTime: 30},
+		{name: "Living Room Lights", averageOnTime: 150},
+		{name: "Air Purifier", type: "ON", averageOnTime: 360},		
 	],
 }
 
 waterScenarios = {
 	1:[	
-		{name: "Bathroom Sink", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Bathroom Shower", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Bathroom Toilet", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "Bathroom Sink", type: "ON", averageOnTime: 5},
+		{name: "Bathroom Shower", type: "ON", averageOnTime: 40},
+		{name: "Bathroom Toilet", type: "ON", averageOnTime: 2},
 	],
 	2:[
-		{name: "Kitchen Sink", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Dish Washer", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
-		{name: "Fridge Water Usage", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "Kitchen Sink", type: "ON", averageOnTime: 10},
+		{name: "Dish Washer", type: "ON", averageOnTime: 60},
+		{name: "Fridge Water Usage", type: "ON", averageOnTime: 1},
 	],
 	3:[
-		{name: "Water Heater", type: "ON", flowRate: "", time: "", consumption: "", averageOnTime: ""},
+		{name: "Water Heater", type: "ON", averageOnTime: 1200},
 	]
 }
 
@@ -92,7 +92,7 @@ const messageTemplate = {
 			],
 		},
 		events: [
-			{name: "", type: "", watt: "", time: "", consumption: "", averageOnTime: ""},
+			{name: "", type: "", averageOnTime: ""},
 		],
 	},
 	water: {
@@ -102,7 +102,7 @@ const messageTemplate = {
 			{name: "", flowVolume: "", price: ""},
 		],
 		events: [
-			{name: "", type: "", flowRate: "", time: "", consumption: "", averageOnTime: ""},
+			{name: "", type: "", averageOnTime: ""},
 		],
 	},
 }
@@ -164,7 +164,7 @@ function makeMessage() {
  	 {name: "Kitchen sink", flowVolume: randomIntBtwNumbers(25,50), price: randomFloatBtwNumbers(0.025, 0.050, 5)},
   ]
   results.water.events = waterScenarios[randomIntBtwNumbers(0,2)]
-
+  console.log(JSON.stringify(results))
   return results
 }
 
