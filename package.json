@@ -1,8 +1,8 @@
 {
-  "name": "elderly-fall-detection",
-  "nomadName": "elderly-fall-detection",
+  "name": "elderly-home-data",
+  "nomadName": "elderly-home-data",
   "version": "1.0.0",
-  "description": "elderly fall detection device that sends out a much of internal information",
+  "description": "Information about the elderly person's home",
   "main": "sensor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
