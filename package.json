@@ -1,8 +1,8 @@
 {
-  "name": "elderly-home-data",
-  "nomadName": "elderly-home-data",
+  "name": "Bernard-composite-node",
+  "nomadName": "Bernard-composite-node",
   "version": "1.0.0",
-  "description": "Information about the elderly person's home",
+  "description": "Bernard data formated to be ready for correlation",
   "main": "sensor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

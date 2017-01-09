@@ -45,6 +45,7 @@ class DataMaintainer {
         break;
       }
       case subscriptions[1]:{
+	    delete value.camera
         this.data[id]["time"] = getTime()
         this.data[id]["data"] = value
         break;
@@ -54,6 +55,7 @@ class DataMaintainer {
       	this.data[id]["gasSensor"] = value.gasSensor
       	this.data[id]["smappee"] = value.smappee
       	this.data[id]["water"] = value.water
+      	break;
       }
       default:{
         throw "unrecognized id"
